@@ -1,30 +1,40 @@
+<script setup>
+import MenuView from "@/views/MenuView.vue";
+import ContentView from "@/views/ContentView.vue";
+</script>
+
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <v-container id="container">
+    <v-row id="main">
+      <v-col cols="3" id="menu">
+        <MenuView />
+      </v-col>
+      <v-col cols="9">
+        <ContentView />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+export default {
+  name: "app",
+};
+</script>
 
-nav {
-  padding: 30px;
-}
+<style lang="scss">
+.v-container {
+  padding-top: 3rem !important;
+  min-height: 800px;
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  #main {
+    padding: 0;
+  }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+  #menu {
+    height: auto;
+    padding-left: 1em;
+    padding-right: 3em;
+  }
 }
 </style>
